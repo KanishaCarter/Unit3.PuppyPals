@@ -1,6 +1,9 @@
 import { puppyList } from './data.js';
 import { useState } from 'react';
-import './index.css';
+import puppyImage from './puppypic.png';
+
+
+
 
 function App() {
   const [puppies, setPuppies] = useState(puppyList);
@@ -21,22 +24,19 @@ function App() {
           </ul>
         </div>
       )}
-
       {/* Clickable puppy names */}
       {puppies.map((puppy) => (
         <p 
           key={puppy.id} 
           onClick={() => setFeatPupId(puppy.id)}
+          className='puppy-list'
         >
           {puppy.name}
         </p>
       ))}
-
-
-      
+  
     </div>
   );
-}
+};
 
 export default App;
-
